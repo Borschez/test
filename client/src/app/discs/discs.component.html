@@ -1,0 +1,36 @@
+<h2>{{title}}</h2>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><span class="lead">Discs </span></div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>DESCRIPTION</th>
+          <th>OWNER</th>
+          <th>TAKEN BY</th>
+          <th width="100"></th>
+          <th width="100"></th>
+          <th width="100"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let disc of discs">
+          <td>{{disc.id}}</td>
+          <td><a routerLink="/disc/{{disc.id}}">{{disc.name}}</a></td>
+          <td>{{disc.description}}</td>
+          <td>{{disc.owner != null ? disc.owner.username : ""}}</td>
+          <td>{{disc.discUser != null ? disc.discUser.username : ""}}</td>
+          <td><button *ngIf="canTake(disc)" title="take disc" (click)="take(disc)" class="btn btn-info custom-width">Take</button></td>
+          <td><button *ngIf="canGetBack(disc)" title="get back disc" (click)="getBack(disc)" class="btn btn-default custom-width">Get Back</button></td>
+          <td><button *ngIf="canDelete(disc)"title="delete disc" (click)="delete(disc)" class="btn btn-danger custom-width">Remove</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

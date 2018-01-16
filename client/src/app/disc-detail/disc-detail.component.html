@@ -1,0 +1,34 @@
+<button (click)="goBack()" class="btn btn-default custom-width">go back</button>
+<div *ngIf="disc; then thenBlock else elseBlock"> ... </div>
+  <ng-template #thenBlock>
+    <h2>{{ disc.name | uppercase }} Details</h2>
+    <div class="row">
+      <div class="col-md-2">
+        <img [src]="disc.posterURL" alt="Can't Display Image" width="236" height="304" class="img-thumbnail">
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="discName">Name:</label>
+          <input [(ngModel)]="disc.name" placeholder="name" class="form-control" id="discName">
+        </div>
+        <div class="form-group">
+          <label for="discDescription">Description:</label>
+          <textarea [(ngModel)]="disc.description" placeholder="description" class="form-control" id="discDescription" rows="6"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="discPosterURL">PosterURL:</label>
+          <input [(ngModel)]="disc.posterURL" placeholder="posterURL" class="form-control" id="discPosterURL">
+        </div>
+        <button *ngIf="disc.name !=''" (click)="save()" class="btn btn-success custom-width">save</button>
+        <button *ngIf="canTake(disc)" title="take disc" (click)="take(disc)" class="btn btn-info custom-width">Take</button>
+        <button *ngIf="canGetBack(disc)" title="get back disc" (click)="getBack(disc)" class="btn btn-default custom-width">Get Back</button>
+        <button *ngIf="canDelete(disc)"title="delete disc" (click)="delete(disc)" class="btn btn-danger custom-width">Remove</button>
+      </div>
+      <div class="col-md-4">
+        <app-movie-search (onSelected)="onSelectMovie($event)"></app-movie-search>
+      </div>
+    </div>
+  </ng-template>
+
+
+

@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center" class="page-header">
+  <h1>{{title}}</h1>
+</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active"><a routerLink="/dashboard">Dashboard</a></li>
+      <li routerLinkActive="active"><a routerLink="/add-disc">Add Disc</a></li>
+      <li routerLinkActive="active"><a routerLink="/free-discs">Free Discs</a></li>
+      <li routerLinkActive="active"><a routerLink="/using-discs">Using Discs</a></li>
+      <li routerLinkActive="active"><a routerLink="/given-discs">Given Discs</a></li>
+      <li routerLinkActive="active"><a routerLink="/discs">All Discs</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <p class="navbar-text" *ngIf="isUser">Logged in as {{userName}}</p>
+      <li><button class="btn navbar-btn" (click)="logout()">Logout</button></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
