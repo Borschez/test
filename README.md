@@ -77,10 +77,10 @@ auth.interceptor - компонент для добавляющий во все 
 
 # Ресурсы:
 
-data.sql - скрипт заполнения данными БД
-application.properties - файл с настройками приложений
-static\css\bootstrap.css - файл стилей
-static\js - папка со скриптами frontend'а
-stsic\index.html - стартовая страница с тегом базового компонента frontend'а
-templates\error.ftl - шаблон для отображения ошибок REST запросов 
+1. data.sql - скрипт заполнения данными БД
+2. application.properties - файл с настройками приложений
+3. static\css\bootstrap.css - файл стилей
+4. static\js - папка со скриптами frontend'а
+5. stsic\index.html - стартовая страница с тегом базового компонента frontend'а
+6. templates\error.ftl - шаблон для отображения ошибок REST запросов 
 
